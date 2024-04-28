@@ -1,0 +1,9 @@
+{
+  "name": "bootcamp-todomvc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^13.6.6"
+  }
+}
