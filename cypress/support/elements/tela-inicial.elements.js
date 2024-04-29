@@ -12,5 +12,6 @@ export const FILTROS = {
 
 export const ITENS = {
     buttonConcludeItem: 'input[class="toggle"]',
-    listaItens: 'ul[class="todo-list"] div'
+    listaItens: 'ul[class="todo-list"] div',
+    validarListaItens: 'ul[class="todo-list"] li'
 }

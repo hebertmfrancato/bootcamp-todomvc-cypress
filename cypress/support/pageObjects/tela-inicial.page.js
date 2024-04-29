@@ -40,6 +40,11 @@ class telaInicial{
         .find('strong')
         .should('have.text', numero)
     }
+
+    validarSizeToDo(numero){
+        cy.get(concluirItem.validarListaItens)
+        .should('have.lenght', numero)
+    }
 }
 
 export default new telaInicial();

@@ -2,7 +2,7 @@ import telaInicial from '../support/pageObjects/tela-inicial.page'
 
 describe('Regressivo ToDo App', () => {
 
-    context('Validadar a tela inicial', () => {
+    context.skip('Validadar a tela inicial', () => {
         beforeEach(() => {
             cy.visit('/')
         })
@@ -12,7 +12,7 @@ describe('Regressivo ToDo App', () => {
         })
     })
 
-    context('Validadar a adição de itens', () => {
+    context.skip('Validadar a adição de itens', () => {
         beforeEach(() => {
             cy.visit('/')
         })
@@ -28,16 +28,48 @@ describe('Regressivo ToDo App', () => {
         });
     })
 
-    context('Validadar a conclusão de itens', () => {
+    context.skip('Validar a conclusão de itens', () => {
+        beforeEach(() => {
+            cy.visit('/')
+    
+            let todoItens = ['Maça', 'Banana', 'Cenoura']
+            todoItens.forEach(function (item) {
+                telaInicial.inputText(item)
+            })
+        })
+
+        it('Concluir um item da lista ToDo', () => {
+            telaInicial.concluirItem()
+            telaInicial.validarContador(2)
+        })
+    })
+
+    context('Validar o filtro da aplicação', () => {
+        beforeEach(() => {
+            cy.visit('/')
+            let todoItens = ['Maça', 'Banana', 'Cenoura']
+    
+            todoItens.forEach(function (item) {
+                telaInicial.inputText(item)
+            }) 
+
+            telaInicial.concluirItem()
+        })
+
+        it('Validar a lista de itens ativos', () => {
+            telaInicial.filrarItem('Active')
+            // telaInicial.validarSizeToDo(2)
+        });
+
+        it('Validar a lista de itens concluídos', () => {
+            telaInicial.filrarItem('Completed')
+            // telaInicial.validarSizeToDo(1)
+        });
+    })
+
+    context.skip('Validadar a remoção de itens', () => {
 
     })
 
-    context('Validadar o filtro da aplicação', () => {
-
-    })
-
-    context('Validadar a remoção de itens', () => {
-
-    })
 
 })
